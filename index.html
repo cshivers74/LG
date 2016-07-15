@@ -11,72 +11,74 @@
             <h2>{{hello}}</h2>
         </div>
     </md-toolbar>
-
-    <div layout="column" style="height:100%;" ng-cloak>
-  <section layout="row" flex>
-    <md-sidenav
-        class="md-sidenav-left"
-        md-component-id="left"
-        md-is-locked-open="$mdMedia('gt-md')"
-        md-disable-backdrop
-        md-whiteframe="4">
-      <md-toolbar class="md-theme-indigo" style="background-color: darkseagreen">
-        <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
-      <md-content layout-padding ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-          Close Sidenav Left
-        </md-button>
-        <p hide show-gt-md>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
-      </md-content>
-    </md-sidenav>
-    <md-content flex layout-padding>
-      <div layout="column" layout-fill layout-align="top center">
-        <p>
-        The left sidenav will 'lock open' on a medium (>=960px wide) device.
-        </p>
-        <p>
-        The right sidenav will focus on a specific child element.
-        </p>
-        <div>
-          <md-button ng-click="toggleLeft()"
-            class="md-primary" hide-gt-md>
-            Toggle left
-          </md-button>
-        </div>
-        <div>
-          <md-button ng-click="toggleRight()"
-            ng-hide="isOpenRight()"
-            class="md-primary">
-            Toggle right
-          </md-button>
-        </div>
-      </div>
-      <div flex></div>
-    </md-content>
-    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-      <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools">Sidenav Right</h1>
-      </md-toolbar>
-      <md-content ng-controller="RightCtrl" layout-padding>
-        <form>
-          <md-input-container>
-            <label for="testInput">Test input</label>
-            <input type="text" id="testInput"
-                   ng-model="data" md-autofocus>
-          </md-input-container>
-        </form>
-        <md-button ng-click="close()" class="md-primary">
-          Close Sidenav Right
-        </md-button>
-      </md-content>
-    </md-sidenav>
-  </section>
-</div>
-
+    <div layout="column" style="height:90%;" ng-cloak>
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo" style="background-color: darkseagreen">
+                    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+                </md-toolbar>
+                <md-content layout-padding ng-controller="LeftCtrl">
+                    <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                        Close Sidenav Left
+                    </md-button>
+                    <p hide show-gt-md>
+                        This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
+                    </p>
+                </md-content>
+            </md-sidenav>
+            <md-content flex layout-padding>
+                <div layout="column" layout-fill layout-align="top center">
+                    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                        Checkbox 1: {{ data.cb1 }}
+                    </md-checkbox>
+                    <md-input-container class="md-block">
+                        <label>Client Name</label>
+                        <input required name="clientName" ng-model="project.clientName">
+                        <div ng-messages="projectForm.clientName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container flex>
+                    <md-toolbar>
+                        <md-content>
+                        </md-content>
+                    </md-toolbar <p>
+                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                    </p>
+                    <p>
+                        The right sidenav will focus on a specific child element.
+                    </p>
+                    <div>
+                        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                            Toggle left
+                        </md-button>
+                    </div>
+                    <div>
+                        <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+                            Toggle right
+                        </md-button>
+                    </div>
+                </div>
+                <div flex></div>
+                <!--    <md-toolbar></md-toolbar> -->
+            </md-content>
+            <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+                <md-toolbar class="md-theme-light">
+                    <h1 class="md-toolbar-tools">Sidenav Right</h1>
+                </md-toolbar>
+                <md-content ng-controller="RightCtrl" layout-padding>
+                    <form>
+                        <md-input-container>
+                            <label for="testInput">Test input</label>
+                            <input type="text" id="testInput" ng-model="data" md-autofocus>
+                        </md-input-container>
+                    </form>
+                    <md-button ng-click="close()" class="md-primary">
+                        Close Sidenav Right
+                    </md-button>
+                </md-content>
+            </md-sidenav>
+        </section>
+    </div>
     <!-- Angular Material requires Angular.js Libraries  ng-controller="LeftCtrl" -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
@@ -84,7 +86,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-
     <script src="app.js"></script>
 </body>
 
