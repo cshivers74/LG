@@ -1,0 +1,76 @@
+/* Styles go here */
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.background {
+	background: white;
+}
+
+.card {
+   margin: 10px;
+}
+
+.main-header {
+	color: white;
+	background: #174466;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.main-header > h1 {
+	font-family: "Helvetica";
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+	background: green;
+	float: left;
+}
+
+md-content.md-default-theme {
+  background-color: #eee;
+}
+
+md-card {
+  background-color: #fff;
+}
+md-card h2:first-of-type {
+  margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+  border-radius: 99%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+  opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+md-sidenav ng-md-icon {
+  position: relative;
+  top: 5px;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
